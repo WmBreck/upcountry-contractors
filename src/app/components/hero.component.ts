@@ -65,7 +65,7 @@ import { CommonModule } from '@angular/common';
         #10b981 100%);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
-      background-image: url('../../../assets/newconstruction1.jpg');
+      background-image: url('/assets/newconstruction1.jpg');
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
