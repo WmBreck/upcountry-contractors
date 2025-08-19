@@ -9,9 +9,8 @@ import { CommonModule } from '@angular/common';
     <section class="hero-section">
       <div class="hero-background"></div>
       <div class="hero-content">
-        <div class="owner-block">
-          <img src="assets/garrett_thumbnail.jpg" alt="Garrett Lovin" class="owner-photo-rect" />
-          <span class="owner-name">Owner: Garrett Lovin</span>
+        <div class="company-logo">
+          <img src="assets/upcountry-logo.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
         </div>
         <div class="glass-panel hero-panel">
           <div class="business-name">Upcountry Contractors LLC</div>
@@ -66,7 +65,7 @@ import { CommonModule } from '@angular/common';
         #10b981 100%);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
-      background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920');
+      background-image: url('../../../assets/newconstruction1.jpg');
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
@@ -99,34 +98,23 @@ import { CommonModule } from '@angular/common';
       margin-bottom: 3rem;
     }
 
-    .owner-block {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .company-logo {
+      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease-out;
     }
-    .owner-photo-rect {
-      width: 80px;
-      height: 80px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.7);
-      background: #fff;
-      display: block;
+
+    .logo-image {
+      max-width: 200px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
     }
-    .owner-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.2);
-      background: rgba(0,0,0,0.15);
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
+
+    .logo-image:hover {
+      transform: scale(1.05);
     }
+
+
 
     .glass-panel {
       background: rgba(255, 255, 255, 0.15);
@@ -272,6 +260,17 @@ import { CommonModule } from '@angular/common';
       from {
         opacity: 0;
         transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
       }
       to {
         opacity: 1;

@@ -10,10 +10,13 @@ import { CommonModule } from '@angular/common';
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3 class="footer-title">Upcountry Contractors</h3>
+            <div class="footer-logo">
+              <img src="assets/upcountry-logo.png" alt="Upcountry Contractors LLC Logo" class="footer-logo-image" />
+            </div>
+            <h3 class="footer-title">Upcountry Contractors LLC</h3>
             <p class="footer-description">
               Transforming homes across upcountry South Carolina with quality craftsmanship 
-              and exceptional service for over 15 years.
+              and exceptional service.
             </p>
             <div class="social-links">
               <a href="#" class="social-link" aria-label="Facebook">📘</a>
@@ -49,9 +52,9 @@ import { CommonModule } from '@angular/common';
           <div class="footer-section">
             <h4 class="section-title">Contact Info</h4>
             <div class="contact-info">
-              <a href="tel:+18645551234" class="contact-item">
+              <a href="tel:+18646609913" class="contact-item">
                 <span class="contact-icon">📞</span>
-                (864) 555-1234
+                (864) 660-9913
               </a>
               <a href="mailto:info@upcountrycontractors.com" class="contact-item">
                 <span class="contact-icon">✉️</span>
@@ -64,6 +67,13 @@ import { CommonModule } from '@angular/common';
               <div class="contact-item">
                 <span class="contact-icon">🕒</span>
                 Mon-Fri: 7AM-6PM, Sat: 8AM-4PM
+              </div>
+            </div>
+            <div class="owner-info">
+              <img src="assets/garrett_thumbnail.jpg" alt="Garrett Lovin" class="owner-photo" />
+              <div class="owner-details">
+                <span class="owner-title">Owner</span>
+                <span class="owner-name">Garrett Lovin</span>
               </div>
             </div>
           </div>
@@ -107,6 +117,16 @@ import { CommonModule } from '@angular/common';
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 3rem;
       margin-bottom: 2rem;
+    }
+
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-image {
+      max-width: 120px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
     }
 
     .footer-section h3.footer-title {
@@ -199,6 +219,42 @@ import { CommonModule } from '@angular/common';
     .contact-icon {
       font-size: 1rem;
       width: 20px;
+    }
+
+    .owner-info {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .owner-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: #fff;
+    }
+
+    .owner-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .owner-title {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+
+    .owner-name {
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
     }
 
     .footer-bottom {
