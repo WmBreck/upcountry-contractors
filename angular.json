@@ -33,6 +33,7 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "outputPath": "docs",
+            "baseHref": "/upcountry-contractors/",
             "polyfills": ["zone.js"],
             "scripts": [],
             "styles": ["src/global_styles.css"],
