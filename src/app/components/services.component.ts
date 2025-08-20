@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="services-section">
+    <section id="services" class="services-section">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Expert Services</h2>
