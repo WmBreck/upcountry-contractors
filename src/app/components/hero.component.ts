@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
       <div class="hero-content">
         <div class="company-logo">
           <!-- Updated logo - Final Logo for Garrett (corrected version) - TEST -->
-          <img src="/assets/Final Logo for Garrett.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
+          <img src="/upcountry-contractors/assets/Final Logo for Garrett.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
         </div>
         <div class="glass-panel hero-panel">
           <div class="business-name">Upcountry Contractors LLC</div>
@@ -66,7 +66,7 @@ import { CommonModule } from '@angular/common';
         #10b981 100%);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
-      background-image: url('/assets/newconstruction1.jpg');
+      background-image: url('/upcountry-contractors/assets/newconstruction1.jpg');
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
