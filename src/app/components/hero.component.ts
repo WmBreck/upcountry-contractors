@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
       <div class="hero-content">
         <div class="company-logo">
           <!-- Updated logo - Final Logo for Garrett -->
-          <img src="/assets/final-logo.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
+          <img src="/assets/Final Logo for Garrett.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
         </div>
         <div class="glass-panel hero-panel">
           <div class="business-name">Upcountry Contractors LLC</div>
