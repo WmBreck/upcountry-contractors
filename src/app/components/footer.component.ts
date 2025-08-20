@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
         <div class="footer-content">
           <div class="footer-section">
             <div class="footer-logo">
+              <!-- Updated logo - Final Logo for Garrett -->
               <img src="/assets/final-logo.png" alt="Upcountry Contractors LLC Logo" class="footer-logo-image" />
             </div>
             <h3 class="footer-title">Upcountry Contractors LLC</h3>

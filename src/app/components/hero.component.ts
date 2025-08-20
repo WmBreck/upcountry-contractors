@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
       <div class="hero-background"></div>
       <div class="hero-content">
         <div class="company-logo">
+          <!-- Updated logo - Final Logo for Garrett -->
           <img src="/assets/final-logo.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
         </div>
         <div class="glass-panel hero-panel">
