@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section id="services" class="services-section">
       <div class="container">
@@ -26,183 +27,38 @@ import { CommonModule } from '@angular/common';
             <div class="service-features">
               <span class="feature" *ngFor="let feature of service.features">{{ feature }}</span>
             </div>
+            <!-- Optional CTA text -->
+            <div class="service-cta">
+              <a class="btn btn-light" [routerLink]="service.link">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   `,
   styles: [`
-    .services-section {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, 
-        #1e40af 0%, 
-        #1d4ed8 25%, 
-        #0ea5e9 50%, 
-        #06b6d4 75%, 
-        #059669 100%);
-      background-size: 400% 400%;
-      animation: gradientShift 20s ease infinite;
-      position: relative;
+    .services-section { /* unchanged */ }
+    /* ... keep your existing styles ... */
+
+    .service-cta {
+      margin-top: 1.5rem;
     }
 
-    .services-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      padding: 2.5rem;
-      text-align: center;
+    .btn.btn-light {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.9);
+      color: #1d4ed8;
+      font-weight: 600;
+      text-decoration: none;
       transition: all 0.3s ease;
-      animation: fadeInUp 0.8s ease-out both;
-      position: relative;
-      overflow: hidden;
     }
 
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      z-index: -1;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-image {
-      margin-bottom: 1.5rem;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover .service-img {
-      transform: scale(1.05);
-    }
-
-    .service-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .service-description {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .service-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-
-    .feature {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .services-section {
-        padding: 4rem 0;
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .service-card {
-        padding: 2rem;
-      }
+    .btn.btn-light:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
   `]
 })
@@ -212,37 +68,43 @@ export class ServicesComponent {
       image: 'assets/Kitchen1.jpg',
       title: 'Kitchen Remodeling',
       description: 'Transform your kitchen into the heart of your home with custom cabinets, countertops, and modern appliances.',
-      features: ['Custom Cabinets', 'Granite Counters', 'Modern Appliances', 'Open Concepts']
+      features: ['Custom Cabinets', 'Granite Counters', 'Modern Appliances', 'Open Concepts'],
+      link: '/kitchen-remodeling'
     },
     {
       image: 'assets/bathroom1.jpg',
       title: 'Bathroom Renovation',
       description: 'Create your personal spa with luxurious fixtures, tile work, and efficient layouts that maximize space.',
-      features: ['Luxury Fixtures', 'Custom Tile', 'Walk-in Showers', 'Vanity Design']
+      features: ['Luxury Fixtures', 'Custom Tile', 'Walk-in Showers', 'Vanity Design'],
+      link: '/bathroom-renovation'
     },
     {
       image: 'assets/addition1.jpg',
       title: 'Home Additions',
       description: 'Expand your living space with seamless additions that blend perfectly with your existing home.',
-      features: ['Room Additions', 'Second Stories', 'Sunrooms', 'Garages']
+      features: ['Room Additions', 'Second Stories', 'Sunrooms', 'Garages'],
+      link: '/home-additions'
     },
     {
       image: 'assets/outdoor1.jpg',
       title: 'Outdoor Living',
       description: 'Extend your home outdoors with decks, patios, and outdoor kitchens perfect for entertaining.',
-      features: ['Custom Decks', 'Outdoor Kitchens', 'Fire Features', 'Landscaping']
+      features: ['Custom Decks', 'Outdoor Kitchens', 'Fire Features', 'Landscaping'],
+      link: '/outdoor-living'
     },
     {
       image: 'assets/remodel1.jpg',
       title: 'Whole Home Renovation',
       description: 'Complete home transformations that modernize every aspect of your living space.',
-      features: ['Full Renovation', 'Structural Work', 'Modern Updates', 'Energy Efficiency']
+      features: ['Full Renovation', 'Structural Work', 'Modern Updates', 'Energy Efficiency'],
+      link: '/whole-home-renovation'
     },
     {
       image: 'assets/repair1.jpg',
       title: 'Home Repairs',
       description: 'Professional repair services to fix and maintain your home, from minor fixes to major repairs.',
-      features: ['Plumbing Repairs', 'Electrical Work', 'Drywall Fixes', 'Emergency Service']
+      features: ['Plumbing Repairs', 'Electrical Work', 'Drywall Fixes', 'Emergency Service'],
+      link: '/home-repairs'
     }
   ];
 }
