@@ -1,9 +1,15 @@
-[build]
-  command = "ng build --configuration=production"
-  publish = "dist/upcountry-contractors/browser"
+# Netlify configuration for Upcountry Contractors
 
-# SPA fallback so Angular routes work on refresh
+[build]
+  command   = "ng build --configuration=production"
+  publish   = "dist/upcountry-contractors/browser"
+
+# Redirects for Angular single-page app (SPA) routing
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to   = "/index.html"
   status = 200
+
+# Optional: environment overrides
+[build.environment]
+  NODE_VERSION = "18"
