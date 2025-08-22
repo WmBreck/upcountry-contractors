@@ -21,27 +21,30 @@ import { FormsModule } from '@angular/forms';
             <h3 class="contact-title">Get In Touch</h3>
             
             <div class="contact-methods">
-              <a href="tel:+18645551234" class="contact-method">
+              <!-- Call -->
+              <a href="tel:+18646609913" class="contact-method" aria-label="Call Upcountry Contractors at 864-660-9913">
                 <div class="method-icon">📞</div>
                 <div class="method-info">
                   <div class="method-label">Call Us Now</div>
-                  <div class="method-value">(864) 555-1234</div>
+                  <div class="method-value">(864) 660-9913</div>
                 </div>
               </a>
               
-              <a href="sms:+18645551234" class="contact-method">
+              <!-- Text -->
+              <a href="sms:+18646609913" class="contact-method" aria-label="Text Upcountry Contractors at 864-660-9913">
                 <div class="method-icon">💬</div>
                 <div class="method-info">
                   <div class="method-label">Text Us</div>
-                  <div class="method-value">(864) 555-1234</div>
+                  <div class="method-value">Text: (864) 660-9913</div>
                 </div>
               </a>
               
-              <a href="mailto:info@upcountrycontractors.com" class="contact-method">
+              <!-- Email -->
+              <a href="mailto:upcountrycontractors@gmail.com" class="contact-method" aria-label="Email Upcountry Contractors">
                 <div class="method-icon">✉️</div>
                 <div class="method-info">
                   <div class="method-label">Email Us</div>
-                  <div class="method-value">info&#64;upcountrycontractors.com</div>
+                  <div class="method-value">upcountrycontractors&#64;gmail.com</div>
                 </div>
               </a>
             </div>
@@ -142,264 +145,76 @@ import { FormsModule } from '@angular/forms';
     </section>
   `,
   styles: [`
-    .contact-section {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, 
-        #2563eb 0%, 
-        #1d4ed8 25%, 
-        #0ea5e9 50%, 
-        #06b6d4 75%, 
-        #10b981 100%);
-      background-size: 400% 400%;
-      animation: gradientShift 35s ease infinite;
-      position: relative;
-    }
+.contact-section{
+  padding:6rem 0;
+  background:#ffffff;
+}
+.container{ max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-header{ text-align:center; margin-bottom:3rem; }
+.section-title{ font-size:3rem; font-weight:800; color:var(--text-strong); }
+.section-subtitle{ color:var(--muted); }
 
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.1);
-    }
+.contact-content{
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 2;
-    }
+.contact-info, .contact-form{ padding:2rem; }
+.contact-title{ font-size:1.5rem; font-weight:800; color:var(--text-strong); margin-bottom:1rem; }
+.contact-methods{ margin-bottom:1.5rem; }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+.contact-method{
+  display:flex; align-items:center; gap:1rem; padding:1rem; margin-bottom:1rem;
+  background:#fff; border:1px solid var(--line); border-radius:12px;
+  text-decoration:none; transition:.2s ease; color:var(--text);
+}
+.contact-method:hover{ box-shadow:0 10px 24px rgba(0,0,0,.08); transform: translateX(4px); }
 
-    .section-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
+.method-icon{ font-size:1.4rem; width:36px; text-align:center; }
+.method-label{ font-size:.9rem; color:var(--muted); margin-bottom:.25rem; }
+.method-value{ font-size:1.05rem; font-weight:700; color:var(--text-strong); }
 
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
+.service-area{ margin-top:1rem; }
+.area-title{ font-weight:700; color:var(--text-strong); margin-bottom:.5rem; }
+.areas{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.area{
+  background:#fff; border:1px solid var(--line); color:var(--text);
+  padding:.35rem .6rem; border-radius:9999px; font-size:.85rem; font-weight:600;
+}
 
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
+.emergency-banner{
+  margin-top:1rem; padding:1rem; display:flex; align-items:center; gap:1rem;
+  background:#FFF8E6; border:1px solid #FDE68A; border-radius:12px; color:#92400E;
+}
+.banner-icon{ font-size:1.5rem; }
 
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
+.form-title{ font-size:1.5rem; font-weight:800; color:var(--text-strong); margin-bottom:1rem; }
+.form-group{ margin-bottom:1rem; }
+.form-group label{ display:block; font-weight:600; color:var(--text-strong); margin-bottom:.4rem; }
+.form-input{
+  width:100%; padding:.75rem 1rem; border:1px solid var(--line); border-radius:10px;
+  background:#fff; color:var(--text); font-size:1rem; transition:.2s ease;
+}
+.form-input:focus{ outline:none; border-color:#cbd5e1; box-shadow:0 0 0 3px rgba(59,130,246,.15); }
 
-    .contact-info {
-      padding: 2.5rem;
-    }
+.submit-button{
+  width:100%; padding:1rem 2rem; border:none; border-radius:9999px; cursor:pointer;
+  background:var(--cta); color:#fff; font-weight:800; letter-spacing:.2px; transition:.2s ease;
+  box-shadow:0 8px 22px rgba(249,115,22,.25);
+}
+.submit-button:hover{ background:var(--cta-hover); transform:translateY(-2px); }
+.form-note{ color:var(--muted); font-size:.9rem; text-align:center; margin-top:.5rem; }
 
-    .contact-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 2rem;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
+@media (max-width:768px){
+  .contact-content{ grid-template-columns:1fr; }
+  .section-title{ font-size:2.25rem; }
+}
+.submit-button:hover{ background:var(--cta-hover); transform:translateY(-2px); }
+.form-note{ color:var(--muted); font-size:.9rem; text-align:center; margin-top:.5rem; }
 
-    .contact-methods {
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .contact-method:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateX(5px);
-    }
-
-    .method-icon {
-      font-size: 1.5rem;
-      width: 40px;
-      text-align: center;
-    }
-
-    .method-label {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.2rem;
-    }
-
-    .method-value {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-area {
-      margin-bottom: 2rem;
-    }
-
-    .area-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .areas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .area {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 0.4rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .emergency-banner {
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(255, 193, 7, 0.2);
-      border: 1px solid rgba(255, 193, 7, 0.3);
-    }
-
-    .banner-icon {
-      font-size: 2rem;
-    }
-
-    .banner-text {
-      color: white;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-form {
-      padding: 2.5rem;
-    }
-
-    .form-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 2rem;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      font-size: 1rem;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .form-input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .form-input:focus {
-      outline: none;
-      border-color: rgba(255, 255, 255, 0.5);
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 1rem 2rem;
-      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      margin-bottom: 1rem;
-    }
-
-    .submit-button:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .submit-button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .button-icon {
-      font-size: 1.2rem;
-    }
-
-    .form-note {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.8);
-      text-align: center;
-      line-height: 1.4;
-    }
+@media (max-width:768px){
+  .contact-content{ grid-template-columns:1fr; }
+  .section-title{ font-size:2.25rem; }
+}
 
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
@@ -408,33 +223,12 @@ import { FormsModule } from '@angular/forms';
     }
 
     @media (max-width: 768px) {
-      .contact-section {
-        padding: 4rem 0;
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-      }
-
-      .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .contact-info,
-      .contact-form {
-        padding: 2rem;
-      }
-
-      .areas {
-        justify-content: center;
-      }
-
-      .emergency-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
+      .contact-section { padding: 4rem 0; }
+      .section-title { font-size: 2.5rem; }
+      .contact-content { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-info, .contact-form { padding: 2rem; }
+      .areas { justify-content: center; }
+      .emergency-banner { flex-direction: column; text-align: center; gap: 0.5rem; }
     }
   `]
 })
@@ -449,16 +243,7 @@ export class ContactComponent {
 
   onSubmit() {
     console.log('Form submitted:', this.formData);
-    // In a real application, you would send this data to your backend
     alert('Thank you for your inquiry! We\'ll contact you within 24 hours to schedule your free consultation.');
-    
-    // Reset form
-    this.formData = {
-      name: '',
-      phone: '',
-      email: '',
-      service: '',
-      message: ''
-    };
+    this.formData = { name: '', phone: '', email: '', service: '', message: '' };
   }
 }

@@ -10,8 +10,10 @@ import { CommonModule } from '@angular/common';
       <div class="hero-background"></div>
       <div class="hero-content">
         <div class="company-logo">
-          <!-- Updated logo - Final Logo for Garrett (corrected version) - TEST -->
-          <img src="/upcountry-contractors/assets/Final Logo for Garrett.png" alt="Upcountry Contractors LLC Logo" class="logo-image" />
+          <img 
+            src="assets/Upcountry_Logo.png" 
+            alt="Upcountry Contractors LLC Logo" 
+            class="hero-logo" />
         </div>
         <div class="glass-panel hero-panel">
           <div class="business-name">Upcountry Contractors LLC</div>
@@ -25,7 +27,7 @@ import { CommonModule } from '@angular/common';
               <span class="cta-icon">📞</span>
               Call Now
             </a>
-            <a href="mailto:info@upcountrycontractors.com" class="cta-button secondary">
+            <a href="mailto:upcountrycontractors@gmail.com" class="cta-button secondary">
               <span class="cta-icon">✉️</span>
               Email Us
             </a>
@@ -39,6 +41,8 @@ import { CommonModule } from '@angular/common';
             </button>
           </div>
         </div>
+      </div>
+    </section>
   `,
   styles: [`
     .hero-section {
@@ -52,44 +56,14 @@ import { CommonModule } from '@angular/common';
       overflow: hidden;
     }
 
-    .hero-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, 
-        #2563eb 0%, 
-        #1d4ed8 25%, 
-        #0ea5e9 50%, 
-        #06b6d4 75%, 
-        #10b981 100%);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      background-image: url('/upcountry-contractors/assets/newconstruction1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-blend-mode: overlay;
-    }
-
-    .hero-background::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.4) 0%, transparent 50%);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+   .hero-background {
+  position:absolute; inset:0;
+  background-image: url('/assets/newconstruction1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(15,23,42,0.65); /* uses deep-navy overlay */
+  background-blend-mode: overlay;
+}
 
     .hero-content {
       position: relative;
@@ -104,44 +78,28 @@ import { CommonModule } from '@angular/common';
       animation: fadeInDown 1s ease-out;
     }
 
-    .logo-image {
-      max-width: 200px;
+    .hero-logo {
+      max-width: 180px;
       height: auto;
       filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
       transition: transform 0.3s ease;
     }
 
-    .logo-image:hover {
-      transform: scale(1.05);
-    }
-
-
+    .hero-logo:hover { transform: scale(1.05); }
 
     .glass-panel {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(20px);
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transition: all 0.3s ease;
     }
 
     .hero-panel {
       padding: 3rem;
       animation: fadeInUp 1s ease-out;
-    }
-
-    .hero-thumbnail {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #fff;
-      margin: 0 auto 1.5rem auto;
-      display: block;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
 
     .business-name {
@@ -187,7 +145,6 @@ import { CommonModule } from '@angular/common';
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
-      border: none;
       cursor: pointer;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
@@ -215,106 +172,24 @@ import { CommonModule } from '@angular/common';
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .cta-icon {
-      font-size: 1.2rem;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      position: relative;
-      z-index: 2;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .stat-item {
-      padding: 1.5rem 2rem;
-      text-align: center;
-      min-width: 150px;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .stat-item:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .stat-item:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 500;
-    }
+    .cta-icon { font-size: 1.2rem; }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-      }
-
-      .hero-panel {
-        padding: 2rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .cta-button {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-      }
-
-      .hero-stats {
-        gap: 1rem;
-      }
-
-      .stat-item {
-        min-width: 120px;
-        padding: 1rem 1.5rem;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-      }
+      .hero-title { font-size: 2.5rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+      .hero-panel { padding: 2rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-button { width: 100%; max-width: 250px; justify-content: center; }
     }
   `]
 })

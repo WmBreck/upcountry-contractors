@@ -10,10 +10,11 @@ import { FooterComponent } from '../components/footer.component';
   template: `
   <section class="subpage">
     <div class="container">
-      <img src="assets/Upcountry_Logo.png" alt="Upcountry Contractors LLC Logo" class="page-logo" />
       <h1 class="page-title">Considering a Bathroom Renovation</h1>
-
-      <div class="page-content">
+      <div class="back-bar">
+        <a routerLink="/" class="btn btn-outline">← Back to Home</a>
+      </div>
+<div class="page-content">
         <h2>Considering a Bathroom Renovation?</h2>
         <p>
           Your bathroom should be more than just a functional space – it should be a retreat. 
@@ -45,6 +46,7 @@ import { FooterComponent } from '../components/footer.component';
       </div>
 
       <div class="subpage-ctas">
+        <a class="btn btn-outline" routerLink="/">← Back to Home</a>
         <a class="btn btn-primary" routerLink="/" fragment="contact">Get a Free Estimate</a>
         <a class="btn btn-outline" href="tel:8646609913">Call 864-660-9913</a>
       </div>
