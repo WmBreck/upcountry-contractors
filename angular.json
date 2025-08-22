@@ -28,7 +28,6 @@
             ],
             "scripts": [],
             "outputPath": "docs",
-                "index": "src/index.html",
             "baseHref": "/",
             "tsConfig": "tsconfig.app.json",
             "ssr": false,
