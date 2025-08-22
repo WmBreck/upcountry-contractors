@@ -27,7 +27,8 @@
               "src/global_styles.css"
             ],
             "scripts": [],
-            "outputPath": "dist/upcountry-contractors/browser",
+            "outputPath": "docs",
+                "index": "src/index.html",
             "baseHref": "/",
             "tsConfig": "tsconfig.app.json",
             "ssr": false,
