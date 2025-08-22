@@ -10,13 +10,16 @@ import { RouterLink } from '@angular/router';
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
+          <!-- Brand / About -->
           <div class="footer-section">
             <div class="footer-logo">
-              <img src="assets/Upcountry_Logo.png" alt="Upcountry Contractors LLC Logo" class="footer-logo-image" />
+              <img src="assets/Upcountry_Logo.png"
+                   alt="Upcountry Contractors LLC Logo"
+                   class="footer-logo-image" />
             </div>
             <h3 class="footer-title">Upcountry Contractors LLC</h3>
             <p class="footer-description">
-              Transforming homes across upcountry South Carolina with quality craftsmanship 
+              Transforming homes across upcountry South Carolina with quality craftsmanship
               and exceptional service.
             </p>
             <div class="social-links">
@@ -26,10 +29,11 @@ import { RouterLink } from '@angular/router';
               <a href="#" class="social-link" aria-label="Google">🔍</a>
             </div>
           </div>
-          
+
+          <!-- Services -->
           <div class="footer-section">
             <h4 class="section-title">Services</h4>
-            <ul class="footer-links">
+            <ul class="footer-links services-links">
               <li><a routerLink="/kitchen-remodeling">Kitchen Remodeling</a></li>
               <li><a routerLink="/bathroom-renovation">Bathroom Renovation</a></li>
               <li><a routerLink="/home-additions">Home Additions</a></li>
@@ -37,7 +41,8 @@ import { RouterLink } from '@angular/router';
               <li><a routerLink="/whole-home-renovation">Whole Home Renovation</a></li>
             </ul>
           </div>
-          
+
+          <!-- Areas -->
           <div class="footer-section">
             <h4 class="section-title">Service Areas</h4>
             <ul class="footer-links">
@@ -49,7 +54,8 @@ import { RouterLink } from '@angular/router';
               <li>Taylors, SC</li>
             </ul>
           </div>
-          
+
+          <!-- Contact -->
           <div class="footer-section">
             <h4 class="section-title">Contact Info</h4>
             <div class="contact-info">
@@ -57,7 +63,7 @@ import { RouterLink } from '@angular/router';
                 <span class="contact-icon">📞</span>
                 (864) 660-9913
               </a>
-              <a href="mailto:upcountrycontractors@gmail.com" class="contact-item">
+              <a href="mailto:upcountrycontractors&#64;gmail.com" class="contact-item">
                 <span class="contact-icon">✉️</span>
                 upcountrycontractors&#64;gmail.com
               </a>
@@ -67,9 +73,10 @@ import { RouterLink } from '@angular/router';
               </div>
               <div class="contact-item">
                 <span class="contact-icon">🕒</span>
-                Mon-Fri: 8AM-5PM, Sat: By appointment only
+                Mon–Fri: 8AM–5PM, Sat: By appointment only
               </div>
             </div>
+
             <div class="owner-info">
               <img src="assets/garrett_thumbnail.jpg" alt="Garrett Lovin" class="owner-photo" />
               <div class="owner-details">
@@ -79,7 +86,8 @@ import { RouterLink } from '@angular/router';
             </div>
           </div>
         </div>
-        
+
+        <!-- Bottom -->
         <div class="footer-bottom">
           <div class="footer-bottom-content">
             <p class="copyright">
@@ -96,132 +104,114 @@ import { RouterLink } from '@angular/router';
     </footer>
   `,
   styles: [`
-.footer {
-  background: radial-gradient(circle at 20% 20%, #f5f5f5, #e5e5e5 40%, #dcdcdc 100%);
-  background-blend-mode: multiply;
-  color: #7c5e42; /* brown for base text */
-  padding: 3rem 0 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.footer h3.footer-title,
-.footer h4.section-title,
-.footer a,
-.footer .owner-name,
-.footer .badge {
-  color: #059669; /* green for headings, links, accents */
-}
-
-.footer .footer-description,
-.footer .contact-item,
-.footer .owner-title,
-.footer .copyright {
-  color: #7c5e42; /* brown for descriptive / secondary text */
-}
-
-.footer a:hover {
-  color: #04644d; /* darker green on hover */
-}
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
+    /* Container + Grid */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .footer-content {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr; /* <-- 4 columns on desktop */
       gap: 3rem;
       margin-bottom: 2rem;
+      align-items: start;
     }
 
+    /* Concrete background + base palette */
+    .footer{
+      background: radial-gradient(circle at 20% 20%, #f5f5f5, #e5e5e5 40%, #d9d9d9 100%);
+      background-blend-mode: multiply;
+      padding: 3rem 0 1.25rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.12);
+      color: #14532d; /* green is default text color */
+    }
+
+    /* Headings / accents green */
+    .footer-title,
+    .section-title,
+    .owner-name,
+    .badge {
+      color: #14532d;
+    }
+
+    /* Services links brown by default, green on hover */
+    .footer-links.services-links a {
+      color: #7c3f00;
+      text-decoration: none;
+      transition: color .25s ease;
+    }
+    .footer-links.services-links a:hover {
+      color: #14532d;
+    }
+
+    /* Non-link text that should remain brown */
+    .footer-description,
+    .contact-item,
+    .owner-title,
+    .copyright {
+      color: #7c3f00;
+    }
+
+    /* Lists */
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: .5rem; }
+
+    /* Logo */
     .footer-logo { margin-bottom: 1rem; }
-    .footer-logo-image {
-      max-width: 120px;
-      height: auto;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
-    }
+    .footer-logo-image { max-width: 120px; height: auto; }
 
-    .footer-section h3.footer-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .footer-section h4.section-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2));
-    }
-
-    .footer-description {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
+    /* Socials */
     .social-links { display: flex; gap: 1rem; }
     .social-link {
       display: inline-flex; align-items: center; justify-content: center;
       width: 40px; height: 40px; border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      text-decoration: none; font-size: 1.2rem; transition: all .3s ease;
-      backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(20, 83, 45, 0.08);
+      border: 1px solid rgba(20, 83, 45, 0.2);
+      font-size: 1.1rem; text-decoration: none; transition: transform .2s ease;
     }
-    .social-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    .social-link:hover { transform: translateY(-2px); }
 
-    .footer-links { list-style: none; padding: 0; margin: 0; }
-    .footer-links li { margin-bottom: 0.5rem; }
-    .footer-links a {
-      color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: color .3s ease;
-    }
-    .footer-links a:hover { color: #fff; }
-
-    .contact-info { display: flex; flex-direction: column; gap: 0.8rem; }
+    /* Contact */
+    .contact-info { display: flex; flex-direction: column; gap: .6rem; }
     .contact-item {
-      display: flex; align-items: center; gap: 0.5rem;
-      color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; transition: color .3s ease;
+      display: flex; align-items: center; gap: .5rem;
+      text-decoration: none; transition: color .2s ease;
     }
-    .contact-item:hover { color: #fff; }
-    .contact-icon { font-size: 1rem; width: 20px; }
+    .contact-item:hover { color: #14532d; }
+    .contact-icon { width: 20px; }
 
+    /* Owner */
     .owner-info {
-      display: flex; align-items: center; gap: 0.8rem; margin-top: 1.5rem; padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex; align-items: center; gap: .8rem; margin-top: 1.5rem; padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
     .owner-photo {
       width: 60px; height: 60px; border-radius: 8px; object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.3); background: #fff;
+      border: 2px solid #7c3f00; background: #fff;
     }
-    .owner-details { display: flex; flex-direction: column; gap: 0.2rem; }
-    .owner-title { font-size: 0.8rem; color: rgba(255,255,255,0.7); font-weight: 500; }
-    .owner-name { font-size: 1rem; color: #fff; font-weight: 600; }
+    .owner-details { display: flex; flex-direction: column; gap: .2rem; }
+    .owner-title { font-size: .85rem; }
 
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
-    .footer-bottom-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .copyright { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; }
-
-    .footer-badges { display: flex; gap: 1rem; flex-wrap: wrap; }
+    /* Bottom row */
+    .footer-bottom { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 1.25rem; }
+    .footer-bottom-content {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
     .badge {
-      background: rgba(255,255,255,0.1); color: #fff; padding: .3rem .8rem; border-radius: 15px;
-      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(124, 63, 0, 0.12);
+      border: 1px solid rgba(124, 63, 0, 0.3);
+      padding: .3rem .8rem;
+      border-radius: 15px;
+      font-size: .8rem; font-weight: 600;
     }
 
+    /* Responsiveness */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
     @media (max-width: 768px) {
-      .footer { padding: 2rem 0 1rem; }
+      .container { padding: 0 1.25rem; }
       .footer-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
       .social-links { justify-content: center; }
       .footer-bottom-content { flex-direction: column; text-align: center; gap: 1rem; }
-      .footer-badges { justify-content: center; }
-    }
-
-    @media (max-width: 1024px) and (min-width: 769px) {
-      .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
   `]
 })

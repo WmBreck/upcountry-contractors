@@ -6,9 +6,33 @@
   "newProjectRoot": "projects",
   "projects": {
     "demo": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular/build:application",
+          "options": {
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/global_styles.css"
+            ],
+            "scripts": [],
+            "outputPath": "dist/upcountry-contractors/browser",
+            "baseHref": "/",
+            "tsConfig": "tsconfig.app.json",
+            "ssr": false,
+            "prerender": false
+          },
           "configurations": {
             "development": {
               "extractLicenses": false,
@@ -24,26 +48,11 @@
               "outputHashing": "all",
               "sourceMap": false
             }
-          },
-          "options": {
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ],
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "outputPath": "docs",
-            "baseHref": "/upcountry-contractors/",
-            "polyfills": ["zone.js"],
-            "scripts": [],
-            "styles": ["src/global_styles.css"],
-            "tsConfig": "tsconfig.app.json",
-            "ssr": false,
-            "prerender": false
           }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "defaultConfiguration": "development",
           "configurations": {
             "development": {
               "buildTarget": "demo:build:development"
@@ -51,15 +60,9 @@
             "production": {
               "buildTarget": "demo:build:production"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         }
-      },
-      "prefix": "app",
-      "projectType": "application",
-      "root": "",
-      "schematics": {},
-      "sourceRoot": "src"
+      }
     }
   },
   "version": 1
