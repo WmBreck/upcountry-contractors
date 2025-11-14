@@ -13,15 +13,15 @@ import { CommonModule } from '@angular/common';
           <span>Get your free estimate today!</span>
         </div>
         <div class="cta-buttons">
-          <a href="tel:+18645551234" class="cta-btn call">
+          <a href="tel:+18646609913" class="cta-btn call">
             <span class="btn-icon">📞</span>
             Call
           </a>
-          <a href="mailto:info@upcountryconstruction.com" class="cta-btn email">
+          <a href="mailto:upcountrycontractors@gmail.com" class="cta-btn email">
             <span class="btn-icon">✉️</span>
             Email
           </a>
-          <a href="sms:+18645551234" class="cta-btn text">
+          <a href="sms:+18646609913" class="cta-btn text">
             <span class="btn-icon">💬</span>
             Text
           </a>
