@@ -1,8 +1,8 @@
 # Netlify configuration for Upcountry Contractors
 
 [build]
-  command   = "ng build --configuration=production"
-  publish   = "dist/upcountry-contractors/browser"
+  command   = "npm run build"
+  publish   = "docs/browser"
 
 # Redirects for Angular single-page app (SPA) routing
 [[redirects]]
